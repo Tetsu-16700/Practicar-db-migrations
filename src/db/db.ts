@@ -1,13 +1,12 @@
 import { Pool } from "pg";
 
 export const pool = new Pool({
-    host: "localhost",
-    port: 5432,
-    database: "cookie-auth",
+    host: process.env["PGHOST"],
+    port: Number(process.env["PGUPORT"]),
+    database: process.env["PGDATABASE"],
     user: process.env["PGUSER"],
-    password: process.env["PGPASSWORD"],
-})
+    password: process.env["PGPASSWORD"],})
 
-export const query = (text: string, params?: (string | number | bollean)[]) => {
+export const query = (text: string, params?: (string | number | boolean)[]) => {
     return pool.query(text, params)
-}
+};
