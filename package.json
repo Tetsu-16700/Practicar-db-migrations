@@ -1,10 +1,10 @@
 {
-  "name": "db-migrations",
+  "name": "practicar-db-migrations",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --env-file=.env src/index.ts",
+    "dev": "nodemon --env-file=.env src/db.ts",
     "build": "tsc",
     "start": "node build/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -18,6 +18,7 @@
   "dependencies": {
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "migrate": "^2.0.1",
     "pg": "^8.11.3",
     "umzug": "^3.5.0"
   },
